@@ -1,0 +1,21 @@
+<div class="container" style="margin-top: 50px;">
+    <h1>Edit</h1>
+    <hr>
+    <form action="/community/edit/<%= @one_community.id %>" method="POST">
+      <div class="form-group">
+        <label>Title</label>
+        <input name="community_title" type="string" class="form-control" value="<%= @one_community.title %>">
+      </div>
+      <div class="form-group">
+        <label>Content</label>
+        <textarea name="community_content" class="form-control" placeholder="Input Content" rows="5"><%= @one_community.content %></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      </div>
+      <a class="btn btn-primary" href="/community/read" role="button">Go list</a>
+      <button type="submit" class="btn btn-primary">Edit</button>
+      <a class="btn btn-primary" href="/community/destroy/<%= @one_community.id %>" role="button">Delete</a>
+    </form>    
+</div>
